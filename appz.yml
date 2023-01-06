@@ -1,0 +1,21 @@
+    app:
+        name: Nginx
+        code: NGINX
+        notify: fjoy@ecloudcontrol.com
+        
+    build:
+        version: 1.2
+        env: DEV
+        build_file: none
+        output_files: output/*.zip
+        image_template: nginx-1.20
+        
+    deploy:
+        context: francisjoy/DEV
+        replicas: 1
+        port:
+        - 80
+    
+    properties:
+        
+        revision : 1
